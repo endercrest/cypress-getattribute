@@ -40,14 +40,13 @@ function App() {
       return;
     }
 
-    // This is where we had a sudden change in behaviour
+    // This is where we had a sudden change in behaviour, theoretically should use hasAttribute,
+    // but this is just a simple example.
     const linkTarget = closestLink.getAttribute('target');
     if (linkTarget != null && linkTarget !== '_self') {
       return;
     }
-  
     const href = closestLink.getAttribute('href');
-    console.log('HREF', href)
     if (!isRouterHref(href)) {
       return;
     }
